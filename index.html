@@ -1,0 +1,138 @@
+<html lang="pl">
+  <head>
+    <title>Dokumentacja JS</title>
+  </head>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  <body>
+    <nav id="navbar">
+      <header><h1>Dokumentacja JavaScript</h1></header>
+      <ul>
+        <a class="nav-link" href="#Pisanie_kodu_JavaScript"><li>Pisanie kodu JavaScript</li></a>
+        <a class="nav-link" href="#Instrukcje"><li>Instrukcje</li></a>
+        <a class="nav-link" href="#Komentarze"><li>Komentarze</li></a>
+        <a class="nav-link" href="#Przydziały_i_równości"><li>Przydziały i równości</li></a>
+        <a class="nav-link" href="#Wyrażenia"><li>Wyrażenia</li></a>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="Pisanie_kodu_JavaScript">
+        <header><h2>Pisanie kodu JavaScript</h2></header>
+        <div>
+          <p>Podobnie jak wiele innych języków programowania, JavaScript jest zorganizowany w instrukcje, bloki składające się z powiązanych zestawów instrukcji i komentarzy. Wewnątrz instrukcji można używać zmiennych, łańcuchów, liczb i wyrażeń.
+          </p>
+        </div>
+      </section>
+      <section class="main-section" id="Instrukcje">
+        <header><h2>Instrukcje</h2></header>
+        <div>
+          <p>Program JavaScript to zbiór instrukcji. Instrukcje JavaScript łączą wyrażenia w taki sposób, że wykonują jedno pełne zadanie.
+          </p>
+          <p>Oświadczenie składa się z jednego lub więcej wyrażeń, słów kluczowych lub operatorów (symboli). Zazwyczaj instrukcja jest zapisywana w jednym wierszu, chociaż instrukcja może być zapisana na dwóch lub więcej liniach. Ponadto dwie lub więcej instrukcji można zapisać w tej samej linii, oddzielając je średnikami. Ogólnie każda nowa linia rozpoczyna nowe oświadczenie. Dobrym pomysłem jest wyraźne wypowiedzenie wypowiedzi. Robisz to za pomocą średnika (;), który jest znakiem kończącym wyrażenie JavaScript. 
+          </p>
+          <p><li>Oto dwa przykłady instrukcji JavaScript. Zdania po // znakach są komentarzami, które są uwagami objaśniającymi w programie.</li>
+          </p>
+          <pre class="pre"><code>
+var aBird = "Robin"; // Przypisanie tekstu "Robin" do zmiennej aBird.<br>
+var today = new Date(); // Przypisz dzisiejszą datę do zmiennej.
+          </code></pre>
+          <p>Grupa instrukcji JavaScript otoczona nawiasami klamrowymi ({}) nazywana jest blokiem. Oświadczenia pogrupowane w jeden blok można ogólnie traktować jako pojedyncze oświadczenie. Oznacza to, że możesz używać bloków w większości miejsc, w których JavaScript oczekuje pojedynczej instrukcji. Godne uwagi wyjątki obejmują nagłówki pętli for i while. Zauważ, że pojedyncze instrukcje w bloku kończą się średnikami, ale sam blok nie.
+          </p>
+          <p>Zasadniczo bloki są używane w funkcjach i warunkowych. Zauważ, że w przeciwieństwie do C ++ i niektórych innych języków, JavaScript nie uważa bloku za nowy zakres; tylko funkcje tworzą nowy zakres.
+          </p>
+          <p>
+W poniższym przykładzie klauzula else zawiera blok dwóch instrukcji otoczonych nawiasami klamrowymi. Blok jest traktowany jako pojedyncza instrukcja. Ponadto sama funkcja składa się z bloku instrukcji otoczonego nawiasami klamrowymi. Instrukcje poniżej funkcji znajdują się poza blokiem i dlatego nie są częścią definicji funkcji.
+          </p>
+          <pre class="pre"><code>function inchestometers(inches) {
+   if (inches < 0) {
+      return -1;
+      }
+   else
+      {
+      var meters = inches / 39.37;
+      return meters;
+      }
+   }
+
+var inches = 12;
+var meters = inchestometers(inches);
+document.write("the value in meters is " + meters);
+          </code></pre>
+        </div>
+      </section>
+      <section class="main-section" id="Komentarze">
+        <header><h2>Komentarze</h2></header>
+        <div>
+          <p>
+Indywidualny komentarz JavaScript zaczyna się od pary ukośników (//). Oto przykład komentarza z jednym wierszem.
+          </p>
+          <pre><code>
+var aGoodIdea = "Comment your code thoroughly."; // To jest komentarz jednoliniowy.
+          </code></pre>
+          <p>
+Wielowierszowy komentarz JavaScript rozpoczyna się od ukośnika i gwiazdki (/ *), a kończy się odwróceniem (* /).
+          </p>
+          <pre><code>/ *
+To jest wielowierszowy komentarz, który wyjaśnia poprzednią instrukcję kodu.
+Instrukcja przypisuje wartość do zmiennej aGoodIdea. Wartość,
+który jest zawarty między cudzysłowami, nazywany jest literałem. ZA
+dosłownie jednoznacznie i bezpośrednio zawiera informacje; to nie
+odnoszą się do informacji pośrednio. Znaki cudzysłowu nie są częścią
+dosłowne.
+* /      </code></pre>
+          <div class="uwaga">UWAGA!: 
+Jeśli spróbujesz osadzić jeden komentarz wielowierszowy w innym, JavaScript zinterpretuje wynikowy komentarz wielowierszowy w nieoczekiwany sposób. Znak * / oznaczający koniec wbudowanego komentarza wielowierszowego interpretowany jest jako koniec całego komentarza wielowierszowego. Oznacza to, że tekst następujący po wbudowanym komentarzu wielowierszowym nie będzie komentowany; zamiast tego będzie interpretowany jako kod JavaScript i wygeneruje błędy składni.
+          </div>
+          <p>Zaleca się zapisywanie wszystkich komentarzy jako bloków komentarzy jednoliniowych. Dzięki temu możesz komentować duże segmenty kodu komentarzem wielowierszowym później.
+          </p>
+          <pre><code>// To jest kolejny komentarz wielowierszowy, zapisany jako seria komentarzy jednoliniowych.
+// Po wykonaniu instrukcji można odwoływać się do zawartości pliku
+// Zmienna aGoodIdea, używając jej nazwy.<br>var extendedIdea = aGoodIdea + " You never know when you'll have to figure out what it does.";</code></pre>
+        </div>
+      </section>
+      <section class="main-section" id="Przydziały_i_równości">
+        <header><h2>Przydziały i równości</h2></header>
+        <div>
+          <p>
+Znak równości (=) jest używany w instrukcjach JavaScript do przypisywania wartości do zmiennych: jest to operator przypisania. Lewy operand operatora = ma zawsze wartość L. Przykłady wartości L to:
+            <ul>
+              <li>zmienne,</li>
+              <li>elementy tablicy,</li>
+              <li>właściwości obiektu.</li>
+            </ul>
+          </p>
+        <p>
+Prawy operand operatora = jest zawsze wartością R. Wartości R mogą być dowolną wartością dowolnego typu, w tym wartością wyrażenia. Oto przykład instrukcji przypisania JavaScript.
+        </p>
+        <pre class="pre"><code>var anInteger = 3;</code></pre>
+        <p>
+Kompilator JavaScript interpretuje tę instrukcję jako: "Przypisz wartość 3 do zmiennej anInteger" lub "anInteger przyjmuje wartość 3."
+        </p>
+        <p>
+Upewnij się, że rozumiesz różnicę między operatorem = (przydziałem) a operatorem == (równość). Aby porównać dwie wartości, aby ustalić, czy są one równe, użyj dwóch znaków równości (==). Jest to szczegółowo omówione w <a href="https://msdn.microsoft.com/pl-pl/library/kw1tezhk(v=vs.94).aspx">Kontrolowaniu przebiegu programu.</a>
+        </p>
+        </div>
+      </section>
+      <section class="main-section" id="Wyrażenia">
+        <header><h2>Wyrażenia</h2></header>
+        <div>
+          <p>
+Wartość wyrażenia JavaScript może być dowolnego poprawnego typu JavaScript - liczba, ciąg znaków, obiekt itd. Najprostsze wyrażenia to literały. Oto kilka przykładów literalnych wyrażeń JavaScript.
+          </p>
+          <pre class="pre"><code>3.9                       // literacja numeryczna
+"Hello!"                  // literacja string
+false                     // literacja boolean
+null                      // literacja wartość null
+{x:1, y:2}                // Objekt literalny
+[1,2,3]                   // Tablica literalna
+function(x){return x*x;}  // Literał funkcji</code></pre>
+          <p>Bardziej skomplikowane wyrażenia mogą zawierać zmienne, wywołania funkcji i inne wyrażenia. Można łączyć wyrażenia, aby tworzyć złożone wyrażenia za pomocą operatorów. Przykładami operatorów są: + (dodawanie), - (odejmowanie), * (mnożenie) i / (dzielenie).</p>
+          <p><li>Oto kilka przykładów złożonych wyrażeń JavaScript.</li></p>
+          <pre class="pre"><code>var anExpression = 3 * (4 / 5) + 6;
+var aSecondExpression = Math.PI * radius * radius;
+var aThirdExpression = aSecondExpression + "%" + anExpression;
+var aFourthExpression = "(" + aSecondExpression + ") % (" + anExpression + ")";</code></pre>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
