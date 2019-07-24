@@ -19,15 +19,16 @@ nav ul {
   font-size: 1.2rem;
   background-color: green;
 }
-nav a {
-  text-decoration:none;
-  margin-left:0;
-}
+
 nav li {
   border: 1px solid white;
   list-style-type:none;
-  color:yellow;
   padding:2px;
+}
+nav li a {
+  text-decoration:none;
+  margin-left:0;
+  color:yellow;
 }
 main {
   background-color: rgba(74, 135, 24, 0.9);
@@ -36,6 +37,14 @@ main {
 }
 .main-section {
   padding:0 10px;
+}
+@media (min-width:1090px) {
+  .example {
+    padding:0;
+  }  
+  .example li {
+      list-style: none;
+    }
 }
 h2 {
   text-align:center;
@@ -52,7 +61,7 @@ pre {
   padding:5px 15px;
   margin-bottom: 20px;
 } 
-.uwaga {
+.attention {
   background-color:orange;
   margin: 20px auto;
   padding: 10px;
@@ -61,21 +70,21 @@ pre {
 @media (max-width:840px) {
   pre {
     overflow-y: hidden;
-  overflow-x: scroll;
- 	max-height: auto;
-	max-width: 1000px;
-  padding: 10px;
+    overflow-x: scroll;
+	  max-width: 1000px;
+    padding: 10px;
   }
   #navbar {
-      background-color:yellow;
-      position:absolute;
-      top:0;
-      padding:0;
-      margin: 0;
-      width:100%;
-      max-height:275px;
-      border:none;
-      z-index:1;
+    background-color:yellow;
+    position:absolute;
+    top:0;
+    padding:0;
+    margin: 0;
+    width:100%;
+    max-height:275px;
+    border:none;
+    z-index:1;
+    float:none;
   }
   main {
     margin-top:275px;
@@ -87,14 +96,14 @@ pre {
     margin-top:275px;
   }
 }
-@media (min-width:841px) {
+@media (min-width:840px) {
   #navbar {
-    height:40vh;
-    float:left;
+    height: 270px;
+    float: left;
     margin-right: 20px;
-    margin-bottom:10px;
-    padding:0 15px;
-    background-color:yellow;
+    margin-bottom: 10px;
+    padding: 0 15px;
+    background-color: yellow;
     border: 1px solid black;
   }
 }
