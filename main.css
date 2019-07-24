@@ -107,3 +107,11 @@ pre {
     border: 1px solid black;
   }
 }
+.link {
+  color:black;
+  text-decoration: none;
+  font-style: italic;
+}
+.link:hover {
+  color:yellow;
+}
